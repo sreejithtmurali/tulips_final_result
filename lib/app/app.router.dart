@@ -8,60 +8,60 @@
 import 'package:flutter/material.dart' as _i14;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i15;
+import 'package:stacked_services/stacked_services.dart' as _i16;
 import 'package:tulips/ui/app_navigation_screen/app_navigation_screen.dart'
     as _i5;
-import 'package:tulips/ui/facial_screen/facial_screen.dart' as _i11;
-import 'package:tulips/ui/home_container_screen/home_container_screen.dart'
-    as _i6;
-import 'package:tulips/ui/home_one_screen/home_one_screen.dart' as _i10;
-import 'package:tulips/ui/home_page/home_page.dart' as _i9;
-import 'package:tulips/ui/offer_page/offer_page.dart' as _i13;
+import 'package:tulips/ui/dashboard_screen/dashboard_screen.dart' as _i8;
+import 'package:tulips/ui/detail_screen/detai_screen.dart' as _i13;
+import 'package:tulips/ui/facial_screen/facial_screen.dart' as _i10;
+import 'package:tulips/ui/home_screen/cat.dart' as _i15;
+import 'package:tulips/ui/home_screen/home_screen.dart' as _i9;
+import 'package:tulips/ui/offer_page/offer_page.dart' as _i12;
 import 'package:tulips/ui/onboard_screen/onboard_screen.dart' as _i3;
-import 'package:tulips/ui/otp_screen/otp_screen.dart' as _i8;
-import 'package:tulips/ui/profie/profile_one_screen.dart' as _i12;
+import 'package:tulips/ui/otp_screen/otp_screen.dart' as _i7;
+import 'package:tulips/ui/profie/profile_one_screen.dart' as _i11;
 import 'package:tulips/ui/sign_in_screen/sign_in_screen.dart' as _i4;
-import 'package:tulips/ui/sign_up_screen/sign_up_screen.dart' as _i7;
+import 'package:tulips/ui/sign_up_screen/sign_up_screen.dart' as _i6;
 import 'package:tulips/ui/splash_screen/splash_view.dart' as _i2;
 
 class Routes {
   static const splashView = '/';
 
-  static const onboardView = '/onboard-view';
+  static const onboardScreen = '/onboard-screen';
 
   static const signInScreen = '/sign-in-screen';
 
   static const appNavigationScreen = '/app-navigation-screen';
 
-  static const homeContainerScreen = '/home-container-screen';
-
   static const signUpScreen = '/sign-up-screen';
 
   static const otpScreen = '/otp-screen';
 
-  static const homePage = '/home-page';
+  static const dashBoardScreen = '/dash-board-screen';
 
-  static const homeOneScreen = '/home-one-screen';
+  static const homeScreen = '/home-screen';
 
   static const facialScreen = '/facial-screen';
 
-  static const profileOneScreen = '/profile-one-screen';
+  static const profileScreen = '/profile-screen';
 
   static const offerPage = '/offer-page';
 
+  static const detailsScreen = '/details-screen';
+
   static const all = <String>{
     splashView,
-    onboardView,
+    onboardScreen,
     signInScreen,
     appNavigationScreen,
-    homeContainerScreen,
     signUpScreen,
     otpScreen,
-    homePage,
-    homeOneScreen,
+    dashBoardScreen,
+    homeScreen,
     facialScreen,
-    profileOneScreen,
+    profileScreen,
     offerPage,
+    detailsScreen,
   };
 }
 
@@ -72,8 +72,8 @@ class StackedRouter extends _i1.RouterBase {
       page: _i2.SplashView,
     ),
     _i1.RouteDef(
-      Routes.onboardView,
-      page: _i3.OnboardView,
+      Routes.onboardScreen,
+      page: _i3.OnboardScreen,
     ),
     _i1.RouteDef(
       Routes.signInScreen,
@@ -84,36 +84,36 @@ class StackedRouter extends _i1.RouterBase {
       page: _i5.AppNavigationScreen,
     ),
     _i1.RouteDef(
-      Routes.homeContainerScreen,
-      page: _i6.HomeContainerScreen,
-    ),
-    _i1.RouteDef(
       Routes.signUpScreen,
-      page: _i7.SignUpScreen,
+      page: _i6.SignUpScreen,
     ),
     _i1.RouteDef(
       Routes.otpScreen,
-      page: _i8.OtpScreen,
+      page: _i7.OtpScreen,
     ),
     _i1.RouteDef(
-      Routes.homePage,
-      page: _i9.HomePage,
+      Routes.dashBoardScreen,
+      page: _i8.DashBoardScreen,
     ),
     _i1.RouteDef(
-      Routes.homeOneScreen,
-      page: _i10.HomeOneScreen,
+      Routes.homeScreen,
+      page: _i9.HomeScreen,
     ),
     _i1.RouteDef(
       Routes.facialScreen,
-      page: _i11.FacialScreen,
+      page: _i10.FacialScreen,
     ),
     _i1.RouteDef(
-      Routes.profileOneScreen,
-      page: _i12.ProfileOneScreen,
+      Routes.profileScreen,
+      page: _i11.ProfileScreen,
     ),
     _i1.RouteDef(
       Routes.offerPage,
-      page: _i13.OfferPage,
+      page: _i12.OfferPage,
+    ),
+    _i1.RouteDef(
+      Routes.detailsScreen,
+      page: _i13.DetailsScreen,
     ),
   ];
 
@@ -127,12 +127,12 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i3.OnboardView: (data) {
-      final args = data.getArgs<OnboardViewArguments>(
-        orElse: () => const OnboardViewArguments(),
+    _i3.OnboardScreen: (data) {
+      final args = data.getArgs<OnboardScreenArguments>(
+        orElse: () => const OnboardScreenArguments(),
       );
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => _i3.OnboardView(key: args.key),
+        builder: (context) => _i3.OnboardScreen(key: args.key),
         settings: data,
       );
     },
@@ -151,69 +151,67 @@ class StackedRouter extends _i1.RouterBase {
         settings: data,
       );
     },
-    _i6.HomeContainerScreen: (data) {
-      final args = data.getArgs<HomeContainerScreenArguments>(
-        orElse: () => const HomeContainerScreenArguments(),
-      );
+    _i6.SignUpScreen: (data) {
+      final args = data.getArgs<SignUpScreenArguments>(nullOk: false);
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => _i6.HomeContainerScreen(key: args.key),
+        builder: (context) =>
+            _i6.SignUpScreen(key: args.key, phone: args.phone),
         settings: data,
       );
     },
-    _i7.SignUpScreen: (data) {
-      final args = data.getArgs<SignUpScreenArguments>(
-        orElse: () => const SignUpScreenArguments(),
-      );
+    _i7.OtpScreen: (data) {
+      final args = data.getArgs<OtpScreenArguments>(nullOk: false);
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => _i7.SignUpScreen(key: args.key),
+        builder: (context) => _i7.OtpScreen(key: args.key, phone: args.phone),
         settings: data,
       );
     },
-    _i8.OtpScreen: (data) {
+    _i8.DashBoardScreen: (data) {
+      final args = data.getArgs<DashBoardScreenArguments>(
+        orElse: () => const DashBoardScreenArguments(),
+      );
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i8.OtpScreen(),
+        builder: (context) => _i8.DashBoardScreen(key: args.key),
         settings: data,
       );
     },
-    _i9.HomePage: (data) {
-      final args = data.getArgs<HomePageArguments>(
-        orElse: () => const HomePageArguments(),
+    _i9.HomeScreen: (data) {
+      final args = data.getArgs<HomeScreenArguments>(
+        orElse: () => const HomeScreenArguments(),
       );
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => _i9.HomePage(key: args.key),
+        builder: (context) => _i9.HomeScreen(key: args.key),
         settings: data,
       );
     },
-    _i10.HomeOneScreen: (data) {
-      final args = data.getArgs<HomeOneScreenArguments>(
-        orElse: () => const HomeOneScreenArguments(),
-      );
+    _i10.FacialScreen: (data) {
+      final args = data.getArgs<FacialScreenArguments>(nullOk: false);
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => _i10.HomeOneScreen(key: args.key),
+        builder: (context) =>
+            _i10.FacialScreen(key: args.key, catname: args.catname),
         settings: data,
       );
     },
-    _i11.FacialScreen: (data) {
-      final args = data.getArgs<FacialScreenArguments>(
-        orElse: () => const FacialScreenArguments(),
+    _i11.ProfileScreen: (data) {
+      final args = data.getArgs<ProfileScreenArguments>(
+        orElse: () => const ProfileScreenArguments(),
       );
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => _i11.FacialScreen(key: args.key),
+        builder: (context) => _i11.ProfileScreen(key: args.key),
         settings: data,
       );
     },
-    _i12.ProfileOneScreen: (data) {
-      final args = data.getArgs<ProfileOneScreenArguments>(
-        orElse: () => const ProfileOneScreenArguments(),
-      );
+    _i12.OfferPage: (data) {
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => _i12.ProfileOneScreen(key: args.key),
+        builder: (context) => const _i12.OfferPage(),
         settings: data,
       );
     },
-    _i13.OfferPage: (data) {
+    _i13.DetailsScreen: (data) {
+      final args = data.getArgs<DetailsScreenArguments>(nullOk: false);
       return _i14.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i13.OfferPage(),
+        builder: (context) =>
+            _i13.DetailsScreen(key: args.key, serviceModel: args.serviceModel),
         settings: data,
       );
     },
@@ -248,8 +246,8 @@ class SplashViewArguments {
   }
 }
 
-class OnboardViewArguments {
-  const OnboardViewArguments({this.key});
+class OnboardScreenArguments {
+  const OnboardScreenArguments({this.key});
 
   final _i14.Key? key;
 
@@ -259,7 +257,7 @@ class OnboardViewArguments {
   }
 
   @override
-  bool operator ==(covariant OnboardViewArguments other) {
+  bool operator ==(covariant OnboardScreenArguments other) {
     if (identical(this, other)) return true;
     return other.key == key;
   }
@@ -292,52 +290,62 @@ class SignInScreenArguments {
   }
 }
 
-class HomeContainerScreenArguments {
-  const HomeContainerScreenArguments({this.key});
-
-  final _i14.Key? key;
-
-  @override
-  String toString() {
-    return '{"key": "$key"}';
-  }
-
-  @override
-  bool operator ==(covariant HomeContainerScreenArguments other) {
-    if (identical(this, other)) return true;
-    return other.key == key;
-  }
-
-  @override
-  int get hashCode {
-    return key.hashCode;
-  }
-}
-
 class SignUpScreenArguments {
-  const SignUpScreenArguments({this.key});
+  const SignUpScreenArguments({
+    this.key,
+    required this.phone,
+  });
 
   final _i14.Key? key;
 
+  final String phone;
+
   @override
   String toString() {
-    return '{"key": "$key"}';
+    return '{"key": "$key", "phone": "$phone"}';
   }
 
   @override
   bool operator ==(covariant SignUpScreenArguments other) {
     if (identical(this, other)) return true;
-    return other.key == key;
+    return other.key == key && other.phone == phone;
   }
 
   @override
   int get hashCode {
-    return key.hashCode;
+    return key.hashCode ^ phone.hashCode;
   }
 }
 
-class HomePageArguments {
-  const HomePageArguments({this.key});
+class OtpScreenArguments {
+  const OtpScreenArguments({
+    this.key,
+    required this.phone,
+  });
+
+  final _i14.Key? key;
+
+  final String phone;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "phone": "$phone"}';
+  }
+
+  @override
+  bool operator ==(covariant OtpScreenArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key && other.phone == phone;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^ phone.hashCode;
+  }
+}
+
+class DashBoardScreenArguments {
+  const DashBoardScreenArguments({this.key});
 
   final _i14.Key? key;
 
@@ -347,7 +355,7 @@ class HomePageArguments {
   }
 
   @override
-  bool operator ==(covariant HomePageArguments other) {
+  bool operator ==(covariant DashBoardScreenArguments other) {
     if (identical(this, other)) return true;
     return other.key == key;
   }
@@ -358,8 +366,8 @@ class HomePageArguments {
   }
 }
 
-class HomeOneScreenArguments {
-  const HomeOneScreenArguments({this.key});
+class HomeScreenArguments {
+  const HomeScreenArguments({this.key});
 
   final _i14.Key? key;
 
@@ -369,7 +377,7 @@ class HomeOneScreenArguments {
   }
 
   @override
-  bool operator ==(covariant HomeOneScreenArguments other) {
+  bool operator ==(covariant HomeScreenArguments other) {
     if (identical(this, other)) return true;
     return other.key == key;
   }
@@ -381,29 +389,34 @@ class HomeOneScreenArguments {
 }
 
 class FacialScreenArguments {
-  const FacialScreenArguments({this.key});
+  const FacialScreenArguments({
+    this.key,
+    required this.catname,
+  });
 
   final _i14.Key? key;
 
+  final String catname;
+
   @override
   String toString() {
-    return '{"key": "$key"}';
+    return '{"key": "$key", "catname": "$catname"}';
   }
 
   @override
   bool operator ==(covariant FacialScreenArguments other) {
     if (identical(this, other)) return true;
-    return other.key == key;
+    return other.key == key && other.catname == catname;
   }
 
   @override
   int get hashCode {
-    return key.hashCode;
+    return key.hashCode ^ catname.hashCode;
   }
 }
 
-class ProfileOneScreenArguments {
-  const ProfileOneScreenArguments({this.key});
+class ProfileScreenArguments {
+  const ProfileScreenArguments({this.key});
 
   final _i14.Key? key;
 
@@ -413,7 +426,7 @@ class ProfileOneScreenArguments {
   }
 
   @override
-  bool operator ==(covariant ProfileOneScreenArguments other) {
+  bool operator ==(covariant ProfileScreenArguments other) {
     if (identical(this, other)) return true;
     return other.key == key;
   }
@@ -424,7 +437,34 @@ class ProfileOneScreenArguments {
   }
 }
 
-extension NavigatorStateExtension on _i15.NavigationService {
+class DetailsScreenArguments {
+  const DetailsScreenArguments({
+    this.key,
+    required this.serviceModel,
+  });
+
+  final _i14.Key? key;
+
+  final _i15.ServiceModel serviceModel;
+
+  @override
+  String toString() {
+    return '{"key": "$key", "serviceModel": "$serviceModel"}';
+  }
+
+  @override
+  bool operator ==(covariant DetailsScreenArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key && other.serviceModel == serviceModel;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode ^ serviceModel.hashCode;
+  }
+}
+
+extension NavigatorStateExtension on _i16.NavigationService {
   Future<dynamic> navigateToSplashView({
     _i14.Key? key,
     int? routerId,
@@ -441,7 +481,7 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToOnboardView({
+  Future<dynamic> navigateToOnboardScreen({
     _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -449,8 +489,8 @@ extension NavigatorStateExtension on _i15.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return navigateTo<dynamic>(Routes.onboardView,
-        arguments: OnboardViewArguments(key: key),
+    return navigateTo<dynamic>(Routes.onboardScreen,
+        arguments: OnboardScreenArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -487,24 +527,9 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToHomeContainerScreen({
-    _i14.Key? key,
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  }) async {
-    return navigateTo<dynamic>(Routes.homeContainerScreen,
-        arguments: HomeContainerScreenArguments(key: key),
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
   Future<dynamic> navigateToSignUpScreen({
     _i14.Key? key,
+    required String phone,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -512,28 +537,31 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition,
   }) async {
     return navigateTo<dynamic>(Routes.signUpScreen,
-        arguments: SignUpScreenArguments(key: key),
+        arguments: SignUpScreenArguments(key: key, phone: phone),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> navigateToOtpScreen([
+  Future<dynamic> navigateToOtpScreen({
+    _i14.Key? key,
+    required String phone,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.otpScreen,
+        arguments: OtpScreenArguments(key: key, phone: phone),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> navigateToHomePage({
+  Future<dynamic> navigateToDashBoardScreen({
     _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -541,15 +569,15 @@ extension NavigatorStateExtension on _i15.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return navigateTo<dynamic>(Routes.homePage,
-        arguments: HomePageArguments(key: key),
+    return navigateTo<dynamic>(Routes.dashBoardScreen,
+        arguments: DashBoardScreenArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> navigateToHomeOneScreen({
+  Future<dynamic> navigateToHomeScreen({
     _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -557,8 +585,8 @@ extension NavigatorStateExtension on _i15.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return navigateTo<dynamic>(Routes.homeOneScreen,
-        arguments: HomeOneScreenArguments(key: key),
+    return navigateTo<dynamic>(Routes.homeScreen,
+        arguments: HomeScreenArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -567,6 +595,7 @@ extension NavigatorStateExtension on _i15.NavigationService {
 
   Future<dynamic> navigateToFacialScreen({
     _i14.Key? key,
+    required String catname,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -574,14 +603,14 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition,
   }) async {
     return navigateTo<dynamic>(Routes.facialScreen,
-        arguments: FacialScreenArguments(key: key),
+        arguments: FacialScreenArguments(key: key, catname: catname),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> navigateToProfileOneScreen({
+  Future<dynamic> navigateToProfileScreen({
     _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -589,8 +618,8 @@ extension NavigatorStateExtension on _i15.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return navigateTo<dynamic>(Routes.profileOneScreen,
-        arguments: ProfileOneScreenArguments(key: key),
+    return navigateTo<dynamic>(Routes.profileScreen,
+        arguments: ProfileScreenArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -605,6 +634,23 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.offerPage,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToDetailsScreen({
+    _i14.Key? key,
+    required _i15.ServiceModel serviceModel,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(Routes.detailsScreen,
+        arguments: DetailsScreenArguments(key: key, serviceModel: serviceModel),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -627,7 +673,7 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithOnboardView({
+  Future<dynamic> replaceWithOnboardScreen({
     _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -635,8 +681,8 @@ extension NavigatorStateExtension on _i15.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return replaceWith<dynamic>(Routes.onboardView,
-        arguments: OnboardViewArguments(key: key),
+    return replaceWith<dynamic>(Routes.onboardScreen,
+        arguments: OnboardScreenArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -673,24 +719,9 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithHomeContainerScreen({
-    _i14.Key? key,
-    int? routerId,
-    bool preventDuplicates = true,
-    Map<String, String>? parameters,
-    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
-        transition,
-  }) async {
-    return replaceWith<dynamic>(Routes.homeContainerScreen,
-        arguments: HomeContainerScreenArguments(key: key),
-        id: routerId,
-        preventDuplicates: preventDuplicates,
-        parameters: parameters,
-        transition: transition);
-  }
-
   Future<dynamic> replaceWithSignUpScreen({
     _i14.Key? key,
+    required String phone,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -698,28 +729,31 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition,
   }) async {
     return replaceWith<dynamic>(Routes.signUpScreen,
-        arguments: SignUpScreenArguments(key: key),
+        arguments: SignUpScreenArguments(key: key, phone: phone),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> replaceWithOtpScreen([
+  Future<dynamic> replaceWithOtpScreen({
+    _i14.Key? key,
+    required String phone,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.otpScreen,
+        arguments: OtpScreenArguments(key: key, phone: phone),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> replaceWithHomePage({
+  Future<dynamic> replaceWithDashBoardScreen({
     _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -727,15 +761,15 @@ extension NavigatorStateExtension on _i15.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return replaceWith<dynamic>(Routes.homePage,
-        arguments: HomePageArguments(key: key),
+    return replaceWith<dynamic>(Routes.dashBoardScreen,
+        arguments: DashBoardScreenArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> replaceWithHomeOneScreen({
+  Future<dynamic> replaceWithHomeScreen({
     _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -743,8 +777,8 @@ extension NavigatorStateExtension on _i15.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return replaceWith<dynamic>(Routes.homeOneScreen,
-        arguments: HomeOneScreenArguments(key: key),
+    return replaceWith<dynamic>(Routes.homeScreen,
+        arguments: HomeScreenArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -753,6 +787,7 @@ extension NavigatorStateExtension on _i15.NavigationService {
 
   Future<dynamic> replaceWithFacialScreen({
     _i14.Key? key,
+    required String catname,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -760,14 +795,14 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition,
   }) async {
     return replaceWith<dynamic>(Routes.facialScreen,
-        arguments: FacialScreenArguments(key: key),
+        arguments: FacialScreenArguments(key: key, catname: catname),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
         transition: transition);
   }
 
-  Future<dynamic> replaceWithProfileOneScreen({
+  Future<dynamic> replaceWithProfileScreen({
     _i14.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -775,8 +810,8 @@ extension NavigatorStateExtension on _i15.NavigationService {
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
   }) async {
-    return replaceWith<dynamic>(Routes.profileOneScreen,
-        arguments: ProfileOneScreenArguments(key: key),
+    return replaceWith<dynamic>(Routes.profileScreen,
+        arguments: ProfileScreenArguments(key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -791,6 +826,23 @@ extension NavigatorStateExtension on _i15.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.offerPage,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithDetailsScreen({
+    _i14.Key? key,
+    required _i15.ServiceModel serviceModel,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(Routes.detailsScreen,
+        arguments: DetailsScreenArguments(key: key, serviceModel: serviceModel),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

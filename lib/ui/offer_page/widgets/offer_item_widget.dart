@@ -10,7 +10,6 @@ class OfferItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 16.h,
@@ -62,7 +61,7 @@ class OfferItemWidget extends StatelessWidget {
                             ),
                             child: Text(
                               "25%",
-                              style: theme.textTheme.labelLarge,
+                              style: CustomTextStyles.labelLargeBluegray50,
                             ),
                           ),
                         ),
@@ -82,7 +81,7 @@ class OfferItemWidget extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 18.v),
                 child: Text(
                   "Classic facial",
-                  style: CustomTextStyles.titleMediumBluegray900,
+                  style: CustomTextStyles.titleMediumInterOnPrimaryContainer,
                 ),
               ),
               Padding(
@@ -92,11 +91,11 @@ class OfferItemWidget extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: "₹",
-                        style: theme.textTheme.titleLarge,
+                        style: CustomTextStyles.titleLargeff252626,
                       ),
                       TextSpan(
                         text: "487",
-                        style: theme.textTheme.titleLarge,
+                        style: CustomTextStyles.titleLargeff252626,
                       ),
                     ],
                   ),

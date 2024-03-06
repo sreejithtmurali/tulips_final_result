@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:tulips/core/app_export.dart';
 
 class AppDecoration {
-
-  static BoxDecoration get fillGray => BoxDecoration(
-    color: appTheme.gray10001,
-  );
-  static BoxDecoration get fillOnErrorContainer => BoxDecoration(
-    color: theme.colorScheme.onErrorContainer.withOpacity(1),
-  );
   // Fill decorations
-  static BoxDecoration get fillBlue => BoxDecoration(
-        color: appTheme.blue50,
-      );
   static BoxDecoration get fillBlueGray => BoxDecoration(
         color: appTheme.blueGray50,
+      );
+  static BoxDecoration get fillGray => BoxDecoration(
+        color: appTheme.gray10001,
+      );
+  static BoxDecoration get fillGray100 => BoxDecoration(
+        color: appTheme.gray100,
+      );
+  static BoxDecoration get fillOnErrorContainer => BoxDecoration(
+        color: theme.colorScheme.onErrorContainer.withOpacity(1),
       );
 
   // Outline decorations
@@ -33,7 +32,7 @@ class AppDecoration {
         ],
       );
   static BoxDecoration get outlineBlack900 => BoxDecoration(
-        color: appTheme.blue50,
+        color: appTheme.blue5001,
         boxShadow: [
           BoxShadow(
             color: appTheme.black900.withOpacity(0.15),
@@ -46,16 +45,30 @@ class AppDecoration {
           ),
         ],
       );
-  static BoxDecoration get outlineGray => BoxDecoration(
+  static BoxDecoration get outlineBlack9001 => BoxDecoration(
+        color: appTheme.gray100,
+        boxShadow: [
+          BoxShadow(
+            color: appTheme.black900.withOpacity(0.15),
+            spreadRadius: 2.h,
+            blurRadius: 2.h,
+            offset: Offset(
+              0,
+              -4,
+            ),
+          ),
+        ],
+      );
+  static BoxDecoration get outlineBlueGray => BoxDecoration(
+        color: appTheme.blueGray50,
         border: Border.all(
-          color: appTheme.gray400,
+          color: appTheme.blueGray100,
           width: 1.h,
         ),
       );
-  static BoxDecoration get outlineOnPrimary => BoxDecoration(
-        color: appTheme.blue5001,
+  static BoxDecoration get outlineGray => BoxDecoration(
         border: Border.all(
-          color: theme.colorScheme.onPrimary,
+          color: appTheme.gray400,
           width: 1.h,
         ),
       );
@@ -69,33 +82,28 @@ class AppDecoration {
 
 class BorderRadiusStyle {
   // Circle borders
-  static BorderRadius get circleBorder36 => BorderRadius.circular(
-    36.h,
-  );
-
-  // Custom borders
-  static BorderRadius get customBorderTL5 => BorderRadius.vertical(
-    top: Radius.circular(5.h),
-  );
-
-  // Rounded borders
-  static BorderRadius get roundedBorder10 => BorderRadius.circular(
-    10.h,
-  );
-  static BorderRadius get roundedBorder24 => BorderRadius.circular(
-    24.h,
-  );
-  // Circle borders
   static BorderRadius get circleBorder30 => BorderRadius.circular(
         30.h,
       );
+  static BorderRadius get circleBorder36 => BorderRadius.circular(
+        36.h,
+      );
 
   // Custom borders
+  static BorderRadius get customBorderTL5 => BorderRadius.vertical(
+        top: Radius.circular(5.h),
+      );
   static BorderRadius get customBorderTL50 => BorderRadius.vertical(
         top: Radius.circular(50.h),
       );
 
-
+  // Rounded borders
+  static BorderRadius get roundedBorder10 => BorderRadius.circular(
+        10.h,
+      );
+  static BorderRadius get roundedBorder24 => BorderRadius.circular(
+        24.h,
+      );
   static BorderRadius get roundedBorder3 => BorderRadius.circular(
         3.h,
       );

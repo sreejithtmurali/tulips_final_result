@@ -89,7 +89,7 @@ class AppNavigationScreen extends StatelessWidget {
                           context,
                           screenTitle: "Home - Container",
                           onTapScreenTitle: () => onTapScreenTitle(
-                              context, Routes.homeContainerScreen),
+                              context, Routes.homeScreen),
                         ),
                         _buildScreenTitle(
                           context,
@@ -113,13 +113,13 @@ class AppNavigationScreen extends StatelessWidget {
                           context,
                           screenTitle: "Home One",
                           onTapScreenTitle: () => onTapScreenTitle(
-                              context, Routes.homeOneScreen),
+                              context, Routes.homeScreen),
                         ),
                         _buildScreenTitle(
                           context,
                           screenTitle: "Onboard",
                           onTapScreenTitle: () => onTapScreenTitle(
-                              context, Routes.onboardView),
+                              context, Routes.onboardScreen),
                         ),
                         _buildScreenTitle(
                           context,

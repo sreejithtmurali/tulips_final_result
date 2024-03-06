@@ -1,5 +1,5 @@
 export 'package:tulips/core/utils/image_constant.dart';
-export 'package:tulips/core/utils/size_utils.dart';
+export 'package:tulips/app/size_utils.dart';
 export 'package:tulips/theme/app_decoration.dart';
 export 'package:tulips/theme/custom_text_style.dart';
 export 'package:tulips/theme/theme_helper.dart';

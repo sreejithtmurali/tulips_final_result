@@ -20,11 +20,12 @@ class $AssetsImagesGen {
   AssetGenImage get imgAndroidStatusBars =>
       const AssetGenImage('assets/images/img_android_status_bars.png');
 
+  /// File path: assets/images/img_android_status_bars_32x360.png
+  AssetGenImage get imgAndroidStatusBars32x360 =>
+      const AssetGenImage('assets/images/img_android_status_bars_32x360.png');
+
   /// File path: assets/images/img_battery.svg
   String get imgBattery => 'assets/images/img_battery.svg';
-
-  /// File path: assets/images/img_battery_black_900.svg
-  String get imgBatteryBlack900 => 'assets/images/img_battery_black_900.svg';
 
   /// File path: assets/images/img_ellipse_1.png
   AssetGenImage get imgEllipse1 =>
@@ -58,20 +59,20 @@ class $AssetsImagesGen {
   String get imgFluentcall24filled =>
       'assets/images/img_fluentcall24filled.svg';
 
-  /// File path: assets/images/img_frame_2109.svg
-  String get imgFrame2109 => 'assets/images/img_frame_2109.svg';
-
   /// File path: assets/images/img_getpaidstock_1.png
   AssetGenImage get imgGetpaidstock1 =>
       const AssetGenImage('assets/images/img_getpaidstock_1.png');
 
-  /// File path: assets/images/img_group_7.png
-  AssetGenImage get imgGroup7 =>
-      const AssetGenImage('assets/images/img_group_7.png');
+  /// File path: assets/images/img_group_17.png
+  AssetGenImage get imgGroup17 =>
+      const AssetGenImage('assets/images/img_group_17.png');
 
   /// File path: assets/images/img_image_1.png
   AssetGenImage get imgImage1 =>
       const AssetGenImage('assets/images/img_image_1.png');
+
+  /// File path: assets/images/img_layer_1.svg
+  String get imgLayer1 => 'assets/images/img_layer_1.svg';
 
   /// File path: assets/images/img_lock.svg
   String get imgLock => 'assets/images/img_lock.svg';
@@ -92,13 +93,13 @@ class $AssetsImagesGen {
   /// File path: assets/images/img_nav_account.svg
   String get imgNavAccount => 'assets/images/img_nav_account.svg';
 
+  /// File path: assets/images/img_nav_account_errorcontainer.svg
+  String get imgNavAccountErrorcontainer =>
+      'assets/images/img_nav_account_errorcontainer.svg';
+
   /// File path: assets/images/img_nav_account_gray_500_01.svg
   String get imgNavAccountGray50001 =>
       'assets/images/img_nav_account_gray_500_01.svg';
-
-  /// File path: assets/images/img_nav_account_primary.svg
-  String get imgNavAccountPrimary =>
-      'assets/images/img_nav_account_primary.svg';
 
   /// File path: assets/images/img_nav_contact.svg
   String get imgNavContact => 'assets/images/img_nav_contact.svg';
@@ -110,12 +111,18 @@ class $AssetsImagesGen {
   /// File path: assets/images/img_nav_home.svg
   String get imgNavHome => 'assets/images/img_nav_home.svg';
 
+  /// File path: assets/images/img_nav_home_primary.svg
+  String get imgNavHomePrimary => 'assets/images/img_nav_home_primary.svg';
+
   /// File path: assets/images/img_nav_offer.svg
   String get imgNavOffer => 'assets/images/img_nav_offer.svg';
 
-  /// File path: assets/images/img_nav_offer_onprimary.svg
-  String get imgNavOfferOnprimary =>
-      'assets/images/img_nav_offer_onprimary.svg';
+  /// File path: assets/images/img_nav_offer_errorcontainer.svg
+  String get imgNavOfferErrorcontainer =>
+      'assets/images/img_nav_offer_errorcontainer.svg';
+
+  /// File path: assets/images/img_nav_offer_primary.svg
+  String get imgNavOfferPrimary => 'assets/images/img_nav_offer_primary.svg';
 
   /// File path: assets/images/img_noun_flower_6448393.svg
   String get imgNounFlower6448393 =>
@@ -148,6 +155,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/img_rectangle_7.png
   AssetGenImage get imgRectangle7 =>
       const AssetGenImage('assets/images/img_rectangle_7.png');
+
+  /// File path: assets/images/img_rectangle_7_304x296.png
+  AssetGenImage get imgRectangle7304x296 =>
+      const AssetGenImage('assets/images/img_rectangle_7_304x296.png');
 
   /// File path: assets/images/img_rectangle_7_69x66.png
   AssetGenImage get imgRectangle769x66 =>
@@ -188,15 +199,12 @@ class $AssetsImagesGen {
   /// File path: assets/images/img_wifi.svg
   String get imgWifi => 'assets/images/img_wifi.svg';
 
-  /// File path: assets/images/img_wifi_black_900.svg
-  String get imgWifiBlack900 => 'assets/images/img_wifi_black_900.svg';
-
   /// List of all assets
   List<dynamic> get values => [
         imageNotFound,
         imgAndroidStatusBars,
+        imgAndroidStatusBars32x360,
         imgBattery,
-        imgBatteryBlack900,
         imgEllipse1,
         imgEllipse2,
         imgEllipse3,
@@ -205,23 +213,25 @@ class $AssetsImagesGen {
         imgEllipse560x60,
         imgEllipse6,
         imgFluentcall24filled,
-        imgFrame2109,
         imgGetpaidstock1,
-        imgGroup7,
+        imgGroup17,
         imgImage1,
+        imgLayer1,
         imgLock,
         imgLogo,
         imgLogoPrimary,
         imgLogoswhatsappicon,
         imgMenu,
         imgNavAccount,
+        imgNavAccountErrorcontainer,
         imgNavAccountGray50001,
-        imgNavAccountPrimary,
         imgNavContact,
         imgNavContactPrimary,
         imgNavHome,
+        imgNavHomePrimary,
         imgNavOffer,
-        imgNavOfferOnprimary,
+        imgNavOfferErrorcontainer,
+        imgNavOfferPrimary,
         imgNounFlower6448393,
         imgRectangle13,
         imgRectangle15,
@@ -230,6 +240,7 @@ class $AssetsImagesGen {
         imgRectangle2,
         imgRectangle21,
         imgRectangle7,
+        imgRectangle7304x296,
         imgRectangle769x66,
         imgSearch,
         imgSettings,
@@ -241,8 +252,7 @@ class $AssetsImagesGen {
         imgUser,
         imgUserImage,
         imgVector1,
-        imgWifi,
-        imgWifiBlack900
+        imgWifi
       ];
 }
 

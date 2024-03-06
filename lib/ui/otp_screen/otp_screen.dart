@@ -6,39 +6,40 @@ import 'package:tulips/widgets/custom_elevated_button.dart';
 import 'package:tulips/widgets/custom_pin_code_text_field.dart';
 
 import '../../app/app.router.dart';
+import 'package:tulips/widgets/custom_elevated_button.dart';
+import 'package:tulips/widgets/custom_pin_code_text_field.dart';
+import 'package:flutter/material.dart';
+import 'package:tulips/core/app_export.dart';
 
 class OtpScreen extends StatelessWidget {
-  const OtpScreen({Key? key})
-      : super(
-          key: key,
-        );
+  String phone;
+   OtpScreen({Key? key,required this.phone}
+  );
 
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<OtpScreenViewModel>.reactive(
 
         viewModelBuilder: () => OtpScreenViewModel(),
-    onViewModelReady: (model) {
+        onViewModelReady: (model) {
 
-    },
-    builder: (context, model, child) {
-    return SafeArea(
+        },
+        builder: (context, model, child) { return SafeArea(
     child: Scaffold(
     resizeToAvoidBottomInset: false,
-    body: SingleChildScrollView(
-    child: SizedBox(
+    body: SizedBox(
     width: double.maxFinite,
     child: SingleChildScrollView(
     child: SizedBox(
     height: SizeUtils.height,
     width: double.maxFinite,
     child: Stack(
-    alignment: Alignment.topCenter,
+    alignment: Alignment.bottomCenter,
     children: [
     Align(
     alignment: Alignment.topCenter,
     child: SizedBox(
-    height: 472 ,
+    height: 472.v,
     width: double.maxFinite,
     child: Stack(
     alignment: Alignment.topLeft,
@@ -47,8 +48,8 @@ class OtpScreen extends StatelessWidget {
     opacity: 0.43,
     child: CustomImageView(
     imagePath: ImageConstant.imgGetpaidstock1,
-    height: 472 ,
-    width: 360 ,
+    height: 472.v,
+    width: 360.h,
     alignment: Alignment.center,
     ),
     ),
@@ -56,12 +57,12 @@ class OtpScreen extends StatelessWidget {
     opacity: 0.3,
     child: CustomImageView(
     imagePath: ImageConstant.imgLogo,
-    height: 40 ,
-    width: 47 ,
+    height: 40.v,
+    width: 47.h,
     alignment: Alignment.topLeft,
     margin: EdgeInsets.only(
-    left: 16 ,
-    top: 24 ,
+    left: 16.h,
+    top: 24.v,
     ),
     ),
     ),
@@ -69,64 +70,60 @@ class OtpScreen extends StatelessWidget {
     ),
     ),
     ),
+      Align(
+        alignment: Alignment.bottomCenter,
+        child: Padding(
+          padding: EdgeInsets.only(
+            left: 16.h,
+            right: 16.h,
+            bottom: 132.v,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 321.h,
+                margin: EdgeInsets.only(right: 7.h),
+                child: Text(
+                  "Step into a world of seamless elegance and effortless scheduling as you embark on a journey to pamper yourself with our beautician booking application.",
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: CustomTextStyles.bodySmallBluegray90001,
+                ),
+              ),
+              SizedBox(height: 52.v),
+              CustomElevatedButton(
+                text: "Next",
+              ),
+            ],
+          ),
+        ),
+      ),
     Align(
-    alignment: Alignment.topCenter,
+    alignment: Alignment.bottomLeft,
     child: Container(
-    width: double.maxFinite,
-    margin: EdgeInsets.only(bottom: 768 ),
-    padding: EdgeInsets.symmetric(
-    horizontal: 17 ,
-    vertical: 6 ,
+    width: 284.h,
+    margin: EdgeInsets.only(
+    left: 16.h,
+    bottom: 289.v,
     ),
-    child: Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    mainAxisSize: MainAxisSize.min,
-    children: [
-    CustomImageView(
-    imagePath: ImageConstant.imgUser,
-    height: 8 ,
-    width: 30 ,
-    margin: EdgeInsets.symmetric(vertical: 4 ),
-    ),
-    Spacer(),
-    CustomImageView(
-    imagePath: ImageConstant.imgWifiBlack900,
-    height: 18.adaptSize,
-    width: 18.adaptSize,
-    ),
-    CustomImageView(
-    imagePath: ImageConstant.imgSettingsBlack900,
-    height: 18.adaptSize,
-    width: 18.adaptSize,
-    margin: EdgeInsets.only(left: 3 ),
-    ),
-    CustomImageView(
-    imagePath: ImageConstant.imgBatteryBlack900,
-    height: 18.adaptSize,
-    width: 18.adaptSize,
-    margin: EdgeInsets.only(left: 3 ),
-    ),
-    ],
+    child: Text(
+    "Where Beauty Meets Convenience – Your Next Appointment Awaits",
+    maxLines: 3,
+    overflow: TextOverflow.ellipsis,
+    style: theme.textTheme.titleLarge,
     ),
     ),
     ),
     Align(
     alignment: Alignment.bottomCenter,
-    child: SizedBox(
-    height: 526 ,
-    width: 357 ,
-    child: Stack(
-    alignment: Alignment.center,
-    children: [
-    Align(
-    alignment: Alignment.center,
     child: Container(
+    margin: EdgeInsets.only(right: 3.h),
     padding: EdgeInsets.symmetric(
-    horizontal: 13 ,
-    vertical: 57 ,
+    horizontal: 13.h,
+    vertical: 57.v,
     ),
-    decoration: AppDecoration.outlineBlack900.copyWith(
+    decoration: AppDecoration.outlineBlack9001.copyWith(
     borderRadius: BorderRadiusStyle.customBorderTL50,
     ),
     child: Column(
@@ -135,79 +132,52 @@ class OtpScreen extends StatelessWidget {
     Align(
     alignment: Alignment.centerLeft,
     child: Padding(
-    padding: EdgeInsets.only(left: 3 ),
+    padding: EdgeInsets.only(left: 4.h),
     child: Text(
     "Seal the Beauty Deal",
     style: theme.textTheme.titleLarge,
     ),
     ),
     ),
-    SizedBox(height: 2 ),
+    SizedBox(height: 2.v),
     Container(
-    width: 321 ,
+    width: 321.h,
     margin: EdgeInsets.only(
-    left: 3 ,
-    right: 7 ,
+    left: 3.h,
+    right: 7.h,
     ),
     child: Text(
     "Enter the secret code (OTP) sent to your inbox, and let the magic unfold as your beauty journey takes its next radiant step.\"",
     maxLines: 3,
     overflow: TextOverflow.ellipsis,
-    style: CustomTextStyles.bodySmallBluegray900,
+    style: CustomTextStyles.bodySmallBluegray90001,
     ),
     ),
-    SizedBox(height: 51 ),
+    SizedBox(height: 51.v),
     Padding(
     padding: EdgeInsets.only(
-    left: 23 ,
-    right: 20 ,
+    left: 23.h,
+    right: 20.h,
     ),
     child: CustomPinCodeTextField(
     context: context,
     onChanged: (value) {},
     ),
     ),
-    SizedBox(height: 51 ),
+    SizedBox(height: 51.v),
     CustomElevatedButton(
     text: "Let’s Verify",
-    margin: EdgeInsets.only(left: 3 ),
-    onPressed: (){
-    Navigator.pushNamed(context, Routes.signUpScreen);
-    },
+      onPressed: (){
+      model.nav();
+      },
     ),
-    SizedBox(height: 51 ),
+    SizedBox(height: 51.v),
     ],
     ),
     ),
     ),
-    Align(
-    alignment: Alignment.center,
-    child: Padding(
-    padding: EdgeInsets.only(
-    left: 16 ,
-    right: 13 ,
-    ),
-    child: Column(
-    mainAxisSize: MainAxisSize.min,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
 
-    SizedBox(height: 9 ),
-
-    SizedBox(height: 52 ),
-    // CustomElevatedButton(
-    //   text: "Next",
-    // ),
     ],
-    ),
-    ),
-    ),
-    ],
-    ),
-    ),
-    ),
-    ],
-    ),
     ),
     ),
     ),
@@ -218,4 +188,9 @@ class OtpScreen extends StatelessWidget {
   }
 
 
+
+
 }
+
+
+

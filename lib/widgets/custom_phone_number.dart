@@ -1,9 +1,9 @@
-import 'package:country_pickers/country.dart';
 import 'package:country_pickers/country_pickers.dart';
 import 'package:country_pickers/utils/utils.dart';
+import 'package:country_pickers/country.dart';
+import 'package:tulips/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:tulips/core/app_export.dart';
-import 'package:tulips/widgets/custom_text_form_field.dart';
 
 // ignore: must_be_immutable
 class CustomPhoneNumber extends StatelessWidget {
@@ -26,12 +26,12 @@ class CustomPhoneNumber extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: appTheme.blue5001,
+        color: appTheme.blue50,
         borderRadius: BorderRadius.circular(
           3.h,
         ),
         border: Border.all(
-          color: theme.colorScheme.onPrimary,
+          color: appTheme.blueGray100,
           width: 1.h,
         ),
       ),
@@ -60,6 +60,9 @@ class CustomPhoneNumber extends StatelessWidget {
                 right: 6.h,
               ),
               child: CustomTextFormField(
+                validator: (value){
+                 return controller!.text.length!=10?"Invalid  phone no":null;
+                },
                 width: 265.h,
                 controller: controller,
                 hintText: "Enter your number",

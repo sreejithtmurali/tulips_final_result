@@ -10,6 +10,9 @@
 class FontFamily {
   FontFamily._();
 
+  /// Font family: DM Sans
+  static const String dMSans = 'DM Sans';
+
   /// Font family: Inder
   static const String inder = 'Inder';
 

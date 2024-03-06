@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tulips/core/app_export.dart';
 
 // ignore: must_be_immutable
-class FrameeighteenlistItemWidget extends StatelessWidget {
-  const FrameeighteenlistItemWidget({Key? key})
+class HomeItemWidget extends StatelessWidget {
+  const HomeItemWidget({Key? key})
       : super(
           key: key,
         );

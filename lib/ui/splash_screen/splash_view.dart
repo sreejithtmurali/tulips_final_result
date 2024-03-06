@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tulips/core/app_export.dart';
 import 'package:stacked/stacked.dart';
@@ -26,8 +27,8 @@ class SplashView extends StatelessWidget {
                 child: Column(
                   children: [
                     Spacer(),
-                    CustomImageView(
-                      imagePath: ImageConstant.imgLogoPrimary,
+                    SvgPicture.asset(
+                      'assets/images/img_logo_primary.svg',
                       height: 97    ,
                       width: 116    ,
                     ),
@@ -36,8 +37,7 @@ class SplashView extends StatelessWidget {
                       opacity: 0.4,
                       child: CustomImageView(
                         imagePath: ImageConstant.imgImage1,
-                        height: 288    ,
-                        width: 360    ,
+                        height: 288 ,
                       ),
                     ),
                   ],

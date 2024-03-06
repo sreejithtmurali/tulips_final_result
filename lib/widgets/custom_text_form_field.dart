@@ -92,7 +92,7 @@ class CustomTextFormField extends StatelessWidget {
           controller: controller,
           focusNode: focusNode ?? FocusNode(),
           autofocus: autofocus!,
-          style: textStyle ?? theme.textTheme.bodyMedium,
+          style: textStyle ?? CustomTextStyles.bodyMediumDMSansGray700,
           obscureText: obscureText!,
           textInputAction: textInputAction,
           keyboardType: textInputType,
@@ -111,32 +111,35 @@ class CustomTextFormField extends StatelessWidget {
         isDense: true,
         contentPadding: contentPadding ??
             EdgeInsets.symmetric(
-              horizontal: 8.h,
-              vertical: 15.v,
+              horizontal: 15.h,
+              vertical: 18.v,
             ),
-        fillColor: fillColor ?? appTheme.blue5001,
+        fillColor:
+            fillColor ?? theme.colorScheme.onErrorContainer.withOpacity(1),
         filled: filled,
         border: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(3.h),
-              borderSide: BorderSide(
-                color: theme.colorScheme.onPrimary,
-                width: 1,
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(
+                  5.h,
+                ),
               ),
+              borderSide: BorderSide.none,
             ),
         enabledBorder: borderDecoration ??
             OutlineInputBorder(
-              borderRadius: BorderRadius.circular(3.h),
-              borderSide: BorderSide(
-                color: theme.colorScheme.onPrimary,
-                width: 1,
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(
+                  5.h,
+                ),
               ),
+              borderSide: BorderSide.none,
             ),
         focusedBorder: borderDecoration ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(3.h),
               borderSide: BorderSide(
-                color: theme.colorScheme.onPrimary,
+                color: appTheme.blueGray100,
                 width: 1,
               ),
             ),

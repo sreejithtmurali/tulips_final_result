@@ -21,8 +21,8 @@ class CustomBottomBarState extends State<CustomBottomBar> {
       type: BottomBarEnum.Home,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgNavOffer,
-      activeIcon: ImageConstant.imgNavOffer,
+      icon: ImageConstant.imgNavOfferPrimary,
+      activeIcon: ImageConstant.imgNavOfferPrimary,
       title: "Offer",
       type: BottomBarEnum.Offer,
     ),
@@ -33,8 +33,8 @@ class CustomBottomBarState extends State<CustomBottomBar> {
       type: BottomBarEnum.Contact,
     ),
     BottomMenuModel(
-      icon: ImageConstant.imgNavAccount,
-      activeIcon: ImageConstant.imgNavAccount,
+      icon: ImageConstant.imgNavAccountErrorcontainer,
+      activeIcon: ImageConstant.imgNavAccountErrorcontainer,
       title: "Account",
       type: BottomBarEnum.Account,
     )
@@ -45,7 +45,7 @@ class CustomBottomBarState extends State<CustomBottomBar> {
     return Container(
       height: 80.v,
       decoration: BoxDecoration(
-        color: appTheme.blue50,
+        color: appTheme.gray100,
         boxShadow: [
           BoxShadow(
             color: theme.colorScheme.primary.withOpacity(0.09),
@@ -68,29 +68,26 @@ class CustomBottomBarState extends State<CustomBottomBar> {
         type: BottomNavigationBarType.fixed,
         items: List.generate(bottomMenuList.length, (index) {
           return BottomNavigationBarItem(
-            icon: Opacity(
-              opacity: 0.5,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  CustomImageView(
-                    imagePath: bottomMenuList[index].icon,
-                    height: 24.adaptSize,
-                    width: 24.adaptSize,
-                    color: theme.colorScheme.errorContainer,
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 1.v),
-                    child: Text(
-                      bottomMenuList[index].title ?? "",
-                      style: CustomTextStyles.bodySmallInterRed400.copyWith(
-                        color: appTheme.red400,
-                      ),
+            icon: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                CustomImageView(
+                  imagePath: bottomMenuList[index].icon,
+                  height: 24.adaptSize,
+                  width: 24.adaptSize,
+                  color: theme.colorScheme.primary,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 1.v),
+                  child: Text(
+                    bottomMenuList[index].title ?? "",
+                    style: CustomTextStyles.bodySmallInterPrimary.copyWith(
+                      color: theme.colorScheme.primary,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
             activeIcon: Column(
               mainAxisSize: MainAxisSize.min,
@@ -100,14 +97,14 @@ class CustomBottomBarState extends State<CustomBottomBar> {
                   imagePath: bottomMenuList[index].activeIcon,
                   height: 24.adaptSize,
                   width: 24.adaptSize,
-                  color: theme.colorScheme.primary,
+                  color: appTheme.gray50001,
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 2.v),
                   child: Text(
                     bottomMenuList[index].title ?? "",
-                    style: CustomTextStyles.bodySmallInderPrimary.copyWith(
-                      color: theme.colorScheme.primary,
+                    style: CustomTextStyles.bodySmallInderGray50001.copyWith(
+                      color: appTheme.gray50001,
                     ),
                   ),
                 ),
@@ -154,7 +151,7 @@ class DefaultWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: Color(0xffffffff),
       padding: EdgeInsets.all(10),
       child: Center(
         child: Column(
